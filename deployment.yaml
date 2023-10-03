@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fastappi
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: fastappi
+  template:
+    metadata:
+      labels:
+        app: fastappi
+    spec:
+      containers:
+      - name: fastappi
+        image: fastappi-bartek
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 80
